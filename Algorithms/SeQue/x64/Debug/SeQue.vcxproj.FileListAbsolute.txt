@@ -1,1 +1,2 @@
 D:\NewProgram\Algorithms\SeQue\x64\Debug\SeQue.exe
+D:\NewProgram\GIt\Algorithms\SeQue\x64\Debug\SeQue.exe

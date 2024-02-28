@@ -39,8 +39,46 @@ bool LinkQue::OutQue(int& _rt)
 	delete tmp;
 	return 1;
 #endif
+	int max{-1};
+	int index{-1};
+	node* tmp = front->next;          // 指向首元素
+	node* out = front->next;          //记录优先级最高的那一个
+	node* last = front->next;          //记录倒数第二个
+	for(int i = 0;i < len;i++)
+	{
+		if (tmp->pri > max)          // 更新最大值和对应的优先元素及其标号
+		{
+			max = tmp->pri;
+			out = tmp;
+			index = i;
+		}
+		if (i == len - 2) last = tmp;
+		tmp = tmp->next;
+	}
+	_rt = out->data;
+	if(index == 0)
+	{
+		tmp = front->next;		
+		front->next = tmp->next;				   // 指向第一个元素的后面一个元素
+		if (!front->next) rear->next = nullptr;    //只有一个元素时出列
+		delete tmp;
+	}
+	else if(index == len - 1)    //出列最后一个元素
+	{
+		rear = last;
+		last->next = nullptr;
+		delete out;
+	}
+	else
+	{
+		last = front;
+		while (last->next != out) last = last->next;  // 找到出列前面的那一个
+		last->next = out->next;
+		delete out;
+	}
+	len--;
 	
-
+	return 1;
 
 }
 

@@ -1,0 +1,5 @@
+﻿  Source.cpp
+  student.cpp
+D:\NewProgram\GIt\Exercise\Has_a_Stu\student.cpp(37,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  Has_a_Stu.vcxproj -> D:\NewProgram\GIt\Exercise\Has_a_Stu\x64\Debug\Has_a_Stu.exe
